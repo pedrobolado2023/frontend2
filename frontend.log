@@ -1,0 +1,47 @@
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.18.16:3000
+✓ Ready in 1148ms
+
+⚠ Slow filesystem detected. The benchmark took 1183ms. If C:\Users\pedro\OneDrive/Documentos/Portal Agente/frontend/.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+ GET /search 200 in 966ms (next.js: 458ms, application-code: 508ms)
+[browser] Erro ao buscar hotéis: TypeError: Failed to fetch
+    at fetchHotels (../../Portal Agente/frontend/src/app/search/page.tsx:61:30)
+    at SearchPage.useEffect (../../Portal Agente/frontend/src/app/search/page.tsx:95:5)
+  59 |   const fetchHotels = async () => {
+  60 |     try {
+> 61 |       const response = await fetch('http://localhost:3001/booking/hotels');
+     |                              ^
+  62 |       const data = await response.json();
+  63 |       setHotels(data);
+  64 |     } catch (error) { (../../Portal Agente/frontend/src/app/search/page.tsx:65:15)
+[browser] Erro calendar: TypeError: Failed to fetch
+    at fetchCalendarData (../../Portal Agente/frontend/src/app/search/page.tsx:71:26)
+    at SearchPage.useEffect (../../Portal Agente/frontend/src/app/search/page.tsx:96:5)
+  69 |   const fetchCalendarData = async () => {
+  70 |     try {
+> 71 |       const resp = await fetch(`http://localhost:3001/booking/calendar?hotelName=${searchP...
+     |                          ^
+  72 |       const data = await resp.json();
+  73 |       setDbCalendarData(data);
+  74 |     } catch (e) { (../../Portal Agente/frontend/src/app/search/page.tsx:75:15)
+[browser] Erro na busca: TypeError: Failed to fetch
+    at handleSearch (../../Portal Agente/frontend/src/app/search/page.tsx:46:30)
+    at SearchPage.useEffect (../../Portal Agente/frontend/src/app/search/page.tsx:97:5)
+  44 |         rooms: guests.rooms.toString()
+  45 |       }).toString();
+> 46 |       const response = await fetch(`http://localhost:3001/booking/search?${query}`);
+     |                              ^
+  47 |       const data = await response.json();
+  48 |       setResults(data);
+  49 |       if (data.length > 0) { (../../Portal Agente/frontend/src/app/search/page.tsx:53:15)
+ GET /search 200 in 110ms (next.js: 7ms, application-code: 103ms)
+ GET /search 200 in 92ms (next.js: 6ms, application-code: 86ms)
+ GET / 307 in 442ms (next.js: 79ms, application-code: 363ms)
+ GET /login 200 in 186ms (next.js: 62ms, application-code: 124ms)
+ GET /dashboard 200 in 130ms (next.js: 63ms, application-code: 68ms)
+ GET /search 200 in 57ms (next.js: 16ms, application-code: 42ms)
+ GET /admin 200 in 146ms (next.js: 64ms, application-code: 82ms)
+ GET /search 200 in 55ms (next.js: 8ms, application-code: 46ms)
+ GET /search 200 in 106ms (next.js: 10ms, application-code: 97ms)
